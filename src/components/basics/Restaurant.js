@@ -9,9 +9,9 @@ import Navbar from './navbar';
 const categoryList = [
   ...new Set(
     Menu.map((value) => {
-        return value.category
+      return value.category
     }
-  )),"All"];
+    )), "All"];
 
 const Restaurant = () => {
   //use effect to manage data for current state and update state
@@ -20,15 +20,15 @@ const Restaurant = () => {
 
   //filter data based on categories
   const filterItem = (category) => {
-   
-    if(category==="All"){
+
+    if (category === "All") {
       setMenuData(Menu);
-      return; 
+      return;
     }
 
     const categories = Menu.filter((value) => {
       if (value.category === category)
-      return value;
+        return value;
     })
 
     //update state with updated data
@@ -37,7 +37,7 @@ const Restaurant = () => {
 
   return (
     <>
-      <Navbar filterItem={filterItem} menuList={menuList}/>
+      <Navbar filterItem={filterItem} menuList={menuList} />
       <MenuCard menuData={menuData} />
     </>
   )
